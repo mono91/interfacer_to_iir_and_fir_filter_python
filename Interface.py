@@ -334,7 +334,7 @@ def codigoboton():
         y=absolute(h)
         db=[]
         for i in range(len(y)):
-            db.append(10*math.log(y[i],10))
+            db.append(20*math.log(y[i],10))
         ax2.plot(w, db, linewidth=2)
     
         #ax6 = fig.add_subplot(325)
