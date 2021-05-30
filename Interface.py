@@ -290,14 +290,14 @@ def codigoboton():
             b, a = signal.iirfilter(17, cutoff_hz/pi, rs=60,btype='low', analog=False)
             taps=b
             filtered_x = signal.filtfilt(b, a, y)
-            w, h = signal.freqs(b, a, 1000)            
+            w, h = signal.freqz(b, a, 1000)            
         
         if filtro_tipo=='Pasa-Altas':
             cutoff_hz = float(nombre0.get())
             b, a = signal.iirfilter(17, cutoff_hz/pi, rs=60,btype='high', analog=False)
             taps=b
             filtered_x = signal.filtfilt(b, a, y)            
-            w, h = signal.freqs(b, a, 1000)
+            w, h = signal.freqz(b, a, 1000)
             
         if filtro_tipo=='Pasa-Banda':
             cutoff_hz = float(nombre0.get())
@@ -305,7 +305,7 @@ def codigoboton():
             b, a = signal.iirfilter(17, [cutoff_hz/pi, cutoff_hz2/pi], rs=60,btype='band', analog=False)
             taps=b
             filtered_x = signal.filtfilt(b, a, y)
-            w, h = signal.freqs(b, a, 1000)
+            w, h = signal.freqz(b, a, 1000)
 
 
 
